@@ -343,3 +343,62 @@ loginBtn.addEventListener('click', () => {
     loginError.innerText = "Invalid username or password.";
   }
 });
+// =================== ADMIN LOGIN + LOGOUT SYSTEM ===================
+
+const loginForm = document.getElementById('loginForm');
+const loginBtn = document.getElementById('loginBtn');
+const logoutBtn = document.getElementById('logoutBtn');
+const logoutSection = document.getElementById('logoutSection');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const loginError = document.getElementById('loginError');
+
+const ADMIN_USERNAME = "ajit@531049";
+const ADMIN_PASSWORD = "ajitkumarram#531049";
+
+let isAdmin = localStorage.getItem("isAdmin") === "true";
+if (isAdmin) {
+  enableAdminView();
+  loginForm.style.display = 'none';
+}
+
+loginBtn.addEventListener('click', () => {
+  const user = usernameInput.value.trim();
+  const pass = passwordInput.value.trim();
+
+  if (user === ADMIN_USERNAME && pass === ADMIN_PASSWORD) {
+    isAdmin = true;
+    localStorage.setItem("isAdmin", "true");
+
+    loginForm.style.display = 'none';
+    enableAdminView();
+    loginError.innerText = '';
+  } else {
+    loginError.innerText = "Invalid username or password.";
+  }
+});
+
+logoutBtn.addEventListener('click', () => {
+  isAdmin = false;
+  localStorage.removeItem("isAdmin");
+  disableAdminView();
+  loginForm.style.display = 'block';
+});
+
+function enableAdminView() {
+  document.getElementById('adminPanel').style.display = 'block';
+  document.getElementById('deleteSubject').style.display = 'inline-block';
+  document.getElementById('deleteChapter').style.display = 'inline-block';
+  document.getElementById('deleteQuestion').style.display = 'inline-block';
+  document.getElementById('editQuestion').style.display = 'inline-block';
+  logoutSection.style.display = 'block';
+}
+
+function disableAdminView() {
+  document.getElementById('adminPanel').style.display = 'none';
+  document.getElementById('deleteSubject').style.display = 'none';
+  document.getElementById('deleteChapter').style.display = 'none';
+  document.getElementById('deleteQuestion').style.display = 'none';
+  document.getElementById('editQuestion').style.display = 'none';
+  logoutSection.style.display = 'none';
+}

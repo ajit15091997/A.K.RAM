@@ -33,7 +33,7 @@ h1, h2 {
 }
 
 /* Select Dropdowns and Inputs */
-select, input[type="text"], input[type="number"] {
+select, input[type="text"], input[type="number"], input[type="password"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;

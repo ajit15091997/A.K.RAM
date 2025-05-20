@@ -312,3 +312,34 @@ restartBtn.addEventListener('click', () => {
 });
 
 refreshSubjects();
+
+// ADMIN LOGIN SYSTEM
+const loginForm = document.getElementById('loginForm');
+const loginBtn = document.getElementById('loginBtn');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const loginError = document.getElementById('loginError');
+
+// Real admin credentials
+const ADMIN_USERNAME = "ajit@531049";
+const ADMIN_PASSWORD = "ajitkumarram#531049";
+
+let isAdmin = false;
+
+loginBtn.addEventListener('click', () => {
+  const user = usernameInput.value.trim();
+  const pass = passwordInput.value.trim();
+
+  if (user === ADMIN_USERNAME && pass === ADMIN_PASSWORD) {
+    isAdmin = true;
+    loginForm.style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'block';
+    document.getElementById('deleteSubject').style.display = 'inline-block';
+    document.getElementById('deleteChapter').style.display = 'inline-block';
+    document.getElementById('deleteQuestion').style.display = 'inline-block';
+    document.getElementById('editQuestion').style.display = 'inline-block';
+    loginError.innerText = '';
+  } else {
+    loginError.innerText = "Invalid username or password.";
+  }
+});

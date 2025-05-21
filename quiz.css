@@ -1,0 +1,135 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background: #0A1128; /* Midnight Blue */
+  color: #EAEAEA; /* Light Gray */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.container {
+  background: #1C1C2E; /* Darker shade for contrast */
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 900px;
+  padding: 30px;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #FFD700; /* Soft Gold */
+  margin-bottom: 20px;
+}
+
+/* Select Dropdowns and Inputs */
+select, input[type="text"], input[type="number"], input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #0A1128;
+  color: #EAEAEA;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #87CEEB; /* Sky Blue */
+  box-shadow: 0 0 5px rgba(135, 206, 235, 0.5);
+}
+
+/* Buttons */
+button {
+  padding: 12px 25px;
+  background: #FFD700; /* Soft Gold */
+  color: #0A1128;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin: 5px;
+}
+
+button:hover {
+  background: #FFC300; /* Slightly darker gold */
+}
+
+/* Quiz Area */
+#quizArea {
+  margin-top: 30px;
+  display: none;
+}
+
+#question {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #EAEAEA;
+}
+
+#options .option {
+  background: #1C1C2E;
+  border: 2px solid #EAEAEA;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #EAEAEA;
+}
+
+#options .option:hover {
+  background: #2E2E3E;
+  border-color: #87CEEB; /* Sky Blue */
+}
+
+/* Correct & Wrong styling */
+.option.correct {
+  background-color: #50C878 !important; /* Emerald Green */
+  color: #0A1128;
+  border-color: #3CB371;
+}
+
+.option.wrong {
+  background-color: #FF6F61 !important; /* Coral Red */
+  color: #0A1128;
+  border-color: #E74C3C;
+}
+
+/* Admin & Edit Form Styles */
+#editForm {
+  display: none;
+  margin-top: 30px;
+}
+
+.scoreboard {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFD700; /* Soft Gold */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

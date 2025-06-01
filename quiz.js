@@ -278,11 +278,11 @@ cancelEditBtn.addEventListener('click', () => {
 });
 
 const ADMIN_CREDENTIALS = JSON.parse(localStorage.getItem('adminCreds')) || {
-  username: "admin",
-  password: "password123"
+  username: "ajitkumarram@531049",
+  password: "ajitkumarram#531049"
 };
 
-loginBtn.addEventListener('click', () => {
+loginBtn.addEventListener('click', () => 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 

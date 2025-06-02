@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MCQ Quiz App - Final</title>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>MCQ Quiz App</h1>
+
+  <!-- Admin Login -->
+  <div id="loginForm">
+    <h3>Admin Login</h3>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button id="loginBtn">Login</button>
+    <p id="loginError" style="color:red;"></p>
+  </div>
+
+  <!-- Logout Section -->
+  <div id="logoutSection" style="display:none; margin: 10px 0;">
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="adminPanel" style="display:none;">
+    <h2>Add New Question</h2>
+    <input type="text" id="newSubject" placeholder="Subject"><br>
+    <input type="text" id="newChapter" placeholder="Chapter"><br>
+    <input type="text" id="newQuestion" placeholder="Question"><br>
+    <input type="text" id="option1" placeholder="Option 1"><br>
+    <input type="text" id="option2" placeholder="Option 2"><br>
+    <input type="text" id="option3" placeholder="Option 3"><br>
+    <input type="text" id="option4" placeholder="Option 4"><br>
+    <input type="text" id="correctAnswer" placeholder="Correct Answer"><br>
+    <button id="addQuestion">Add Question</button>
+  </div>
+
+  <!-- Quiz Selectors -->
+  <div id="selectors">
+    <select id="subjectSelect"><option value="">Select Subject</option></select>
+    <select id="chapterSelect" disabled><option value="">Select Chapter</option></select>
+    <button id="deleteSubject" style="display:none;">Delete Subject</button>
+    <button id="deleteChapter" style="display:none;">Delete Chapter</button>
+  </div>
+
+  <!-- Quiz Play Area -->
+  <div id="quizArea" style="display:none;">
+    <div id="question"></div>
+    <div id="options" class="options-container"></div>
+    <div id="navigationButtons" style="margin-top:10px;">
+      <button id="prevBtn" style="display:none;">Previous</button>
+      <button id="nextBtn" style="display:none;">Next</button>
+    </div>
+    <div id="scoreboard" style="margin-top: 10px; font-weight: bold;"></div>
+    <button id="restart" style="display:none;">Restart Quiz</button>
+    <button id="deleteQuestion" style="display:none;">Delete Current Question</button>
+    <button id="editQuestion" style="display:none;">Edit Current Question</button>
+  </div>
+
+  <!-- Edit Question Form -->
+  <div id="editForm" style="display:none;">
+    <h2>Edit Question</h2>
+    <input type="text" id="editQuestionText"><br>
+    <input type="text" id="editOption1"><br>
+    <input type="text" id="editOption2"><br>
+    <input type="text" id="editOption3"><br>
+    <input type="text" id="editOption4"><br>
+    <input type="text" id="editCorrectAnswer"><br>
+    <button id="saveEdit">Save Changes</button>
+    <button id="cancelEdit">Cancel</button>
+  </div>
+</div>
+
+<script src="quiz.js"></script>
+</body>
+</html>
